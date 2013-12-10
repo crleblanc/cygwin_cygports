@@ -13,4 +13,5 @@ were real NumPy arrays. Thousands of datasets can be stored in a
 single file, categorized and tagged however you want."
 HOMEPAGE="http://www.h5py.org/"
 SRC_URI="https://h5py.googlecode.com/files/h5py-2.2.0.tar.gz"
+DEPEND=hdf5, libhdf5-devel, python, python-numpy
 REQUIRES=hdf5
