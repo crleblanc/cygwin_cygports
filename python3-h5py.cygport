@@ -2,7 +2,7 @@ ORIG_PN="h5py"
 inherit python3-distutils
 
 NAME="python3-h5py"
-VERSION=2.2.1
+VERSION=2.3.1
 RELEASE=1
 CATEGORY="Python"
 SUMMARY="A Pythonic interface to the HDF5 binary data format for Python 3"
@@ -12,7 +12,7 @@ can slice into multi-terabyte datasets stored on disk, as if they
 were real NumPy arrays. Thousands of datasets can be stored in a 
 single file, categorized and tagged however you want."
 HOMEPAGE="http://www.h5py.org/"
-SRC_URI="https://h5py.googlecode.com/files/h5py-2.2.1.tar.gz"
+SRC_URI="https://pypi.python.org/packages/source/h/h5py/h5py-2.3.1.tar.gz"
 DEPEND="hdf5 libhdf5-devel python3 python3-numpy"
 REQUIRES=hdf5
 
