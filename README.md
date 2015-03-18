@@ -1,7 +1,7 @@
-Cygwin h5py
+Cygwin Cygport Files
 ===================
 
-The files required to make a Cygwin packages (32 bit, 64 bit, noarch) for various Cygwin packages
+The files required to make Cygwin packages (32 bit, 64 bit, noarch) for various Cygwin packages
 
 Building and Testing under Cygwin
 -----------
