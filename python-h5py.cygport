@@ -2,7 +2,7 @@ ORIG_PN="h5py"
 inherit python-distutils
 
 NAME="python-h5py"
-VERSION=2.3.1
+VERSION=2.4.0
 RELEASE=1
 CATEGORY="Python"
 SUMMARY="A Pythonic interface to the HDF5 binary data format for Python 2"
@@ -12,12 +12,20 @@ can slice into multi-terabyte datasets stored on disk, as if they
 were real NumPy arrays. Thousands of datasets can be stored in a 
 single file, categorized and tagged however you want."
 HOMEPAGE="http://www.h5py.org/"
-SRC_URI="https://pypi.python.org/packages/source/h/h5py/h5py-2.3.1.tar.gz"
-DEPEND="hdf5 libhdf5-devel python python-numpy"
+# Default SRC_URI finds the correct file
+DEPEND="hdf5 libhdf5-devel python python-numpy python-cython"
 REQUIRES=hdf5
 
+src_compile() {
+	# cython doesn't like the symlinks lndirs makes
+	#lndirs
+	cp -R ${S}/. ${B}
+	cd ${B}
+	python_distutils_compile 
+}
+
 src_test() {
-    # extension modules not built in-place under build dir,
+	# extension modules not built in-place under build dir,
 	# so run tests from staging dir
 	cd ${D}/${PYTHON_SITELIB}
 	${PYTHON} -c "import h5py; h5py.run_tests()"
