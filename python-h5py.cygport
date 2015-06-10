@@ -13,8 +13,8 @@ were real NumPy arrays. Thousands of datasets can be stored in a
 single file, categorized and tagged however you want."
 HOMEPAGE="http://www.h5py.org/"
 # Default SRC_URI finds the correct file
-DEPEND="hdf5 libhdf5-devel python python-numpy python-cython"
-REQUIRES=hdf5
+DEPEND="hdf5 libhdf5-devel python python-numpy python-cython python-six"
+REQUIRES="hdf5 python-numpy python-six"
 
 src_compile() {
 	# cython doesn't like the symlinks lndirs makes
